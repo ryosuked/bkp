@@ -1,4 +1,4 @@
-# lnkp
+# bkp
 
 テキストデータを構造化された JSONL 形式に変換・加工、およびブックマーク（リンク付きメモ）を TSV 形式でエクスポートするためのスクリプト群です。
 Ruby による柔軟な処理と、Go による高速・大規模データ向けの処理の両方を提供しています。
@@ -12,6 +12,9 @@ Ruby による柔軟な処理と、Go による高速・大規模データ向け
 
 ### Go版 (高速・大規模データ向け一括処理)
 -   **`main.go`**: 上記 Ruby 版の全工程を 1 ステップで実行します。
+
+### TypeScript/Web版 (ブラウザ完結型 Web UI)
+-   **`bkp-web/`**: SolidJS + TypeScript によるブラウザ完結型の実装です。サーバー不要で、テキストのリアルタイム変換とプレビューが可能です。
 
 ---
 
@@ -29,8 +32,8 @@ cat input.txt | go run main.go > output.tsv
 cat input.txt | go run main.go -json > output.jsonl
 
 # バイナリをビルドして実行
-go build -o lnkp main.go
-./lnkp -json < input.txt > output.jsonl
+go build -o bkp main.go
+./bkp -json < input.txt > output.jsonl
 ```
 
 ---
