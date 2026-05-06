@@ -70,11 +70,23 @@ textarea:focus {
   outline-offset: -1px;
 }
 
-.output-controls {
+.output-controls, .input-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  cursor: pointer;
 }
 
 .button-group {

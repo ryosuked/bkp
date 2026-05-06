@@ -5,8 +5,9 @@ import './styles/App.css';
 function App() {
   const [inputText, setInputText] = createSignal('');
   const [outputFormat, setOutputFormat] = createSignal<'TSV' | 'JSONL'>('TSV');
+  const [joinWithSpace, setJoinWithSpace] = createSignal(false);
 
-  const bookmarks = createMemo(() => parseTextToBookmarks(inputText()));
+  const bookmarks = createMemo(() => parseTextToBookmarks(inputText(), joinWithSpace()));
 
   const outputText = createMemo(() => {
     const data = bookmarks();
@@ -42,6 +43,16 @@ Lines starting with http:// are URLs."
               value={inputText()}
               onInput={(e) => setInputText(e.currentTarget.value)}
             />
+            <div class="input-controls">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={joinWithSpace()}
+                  onChange={(e) => setJoinWithSpace(e.currentTarget.checked)}
+                />
+                Join description lines with space
+              </label>
+            </div>
           </div>
 
           <div class="pane">

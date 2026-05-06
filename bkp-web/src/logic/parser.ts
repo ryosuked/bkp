@@ -1,6 +1,6 @@
 import type { Bookmark } from './types';
 
-export const parseTextToBookmarks = (text: string): Bookmark[] => {
+export const parseTextToBookmarks = (text: string, joinWithSpace = false): Bookmark[] => {
   const paragraphs = text.split(/\n\s*\n/);
   
   return paragraphs
@@ -21,7 +21,7 @@ export const parseTextToBookmarks = (text: string): Bookmark[] => {
       });
 
       return {
-        description: descriptionLines.join('\n').trim(),
+        description: descriptionLines.join(joinWithSpace ? ' ' : '\n').trim(),
         urls,
       };
     })
