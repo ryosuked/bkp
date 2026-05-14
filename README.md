@@ -3,6 +3,8 @@
 テキストデータを構造化された JSONL 形式に変換・加工、およびブックマーク（リンク付きメモ）を TSV 形式でエクスポートするためのスクリプト群です。
 Ruby による柔軟な処理と、Go による高速・大規模データ向けの処理の両方を提供しています。
 
+**TypeScript/Web版 サンプルサイト**: [https://ryosuked.github.io/bkp/](https://ryosuked.github.io/bkp/)
+
 ## ツール一覧
 
 ### Ruby版 (柔軟な加工・パイプライン)
